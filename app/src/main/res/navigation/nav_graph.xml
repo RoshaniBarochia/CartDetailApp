@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ClothesFragment">
+
+    <fragment
+        android:id="@+id/ClothesFragment"
+        android:name="com.roshani.cartdetail.fragments.ClothesFragment"
+        android:label="ClothesFragment"
+        tools:layout="@layout/fragment_clothes">
+
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/CartSummeryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CartSummeryFragment"
+        android:name="com.roshani.cartdetail.fragments.CartSummeryFragment"
+        android:label="CartSummeryFragment"
+        tools:layout="@layout/cart_summery">
+
+        <argument
+            android:name="service"
+            app:argType="java.io.Serializable" />
+        <!--<argument
+            android:name="product"
+            app:argType="java.io.Serializable" />-->
+
+    </fragment>
+</navigation>

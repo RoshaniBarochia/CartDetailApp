@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.roshani.cartdetail.model.SubCategory" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Clothes Name -->
+    <TextView
+        android:id="@+id/tvClothesName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@{model.sub_category_name}"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" />
+
+    <ImageView
+        android:id="@+id/expand_collapse_icon"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvClothesName"
+        android:padding="@dimen/_10sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/baseline_expand_more_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/tvClothesName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
